@@ -1,0 +1,4 @@
+name: fmStaffWorkFree
+version: '${version}'
+main: ru.feymer.fmstaffworkfree.FmStaffWorkFree
+api-version: '1.16'
