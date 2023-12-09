@@ -1,6 +1,7 @@
 package ru.feymer.fmstaffworkfree.utils;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -118,7 +119,14 @@ public class DataConfig {
     }
 
     public List<String> getKeys(String path) {
-        return new ArrayList<>((getData().getConfigurationSection(ParentNode + path).getKeys(false)));
+
+        ConfigurationSection section = getData().getConfigurationSection(ParentNode + path);
+
+        if (section == null) {
+            return new ArrayList<>();
+        }
+
+        return new ArrayList<>((section.getKeys(false)));
     }
 
     public int getInt(String path) {

@@ -2,3 +2,11 @@ name: fmStaffWorkFree
 version: '${version}'
 main: ru.feymer.fmstaffworkfree.FmStaffWorkFree
 api-version: '1.16'
+depend: [ LiteBans ]
+commands:
+  staffwork:
+    aliases:
+      - sw
+  fmstaffwork:
+    aliases:
+      - fmsw
